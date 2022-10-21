@@ -1,0 +1,26 @@
+# I'm also consulting the bigocheatsheet.com
+
+# Task 0
+The task employs 2 lists that are each accessed 1 time. We are not searching for a specific value, we are accessing a specific index in a list. For one list it's the beginning, for the other list it's the end.
+For direct access this has a Worst Case Big-O of: O(c).
+This is considered Excellent - score of 5 out of 5.
+
+# Task 1
+The files are imported as a list of lists from which only a portion (the tel numbers) are needed. So, I need to iterate over each element of the main list to extract the needed data. So, the `n` is depended on how many rows the input file has. The `set()` function makes things easy but I still need to first extract the tel numbers.
+For iteration this has a Worst Case Big-O of: O(n) or Linear.
+This is considered Fair - score of 3 out of 5.
+
+# Task 2
+One file is imported which requires an analysis of the last index within each element of the list. A comparison needs to be made to search and find the largest value (seconds). So, we have to iterate over each row to get each call's time in seconds. The `n` is depended on the rows in the file.
+For iteration this has a Worst Case Big-O of: O(n) or Linear.
+This is considered Fair - score of 3 out of 5.
+
+# Task 3
+While Part A would have a Big-O of O(n), the requirement to sort in Part B increases the time complexity of the overall task.
+For sorting this has a Worst Case Big-O of: O(n log(n)) or Logarithmic
+This is considered Bad - score of 2 out of 5
+
+# Task 4
+Up until the sorting this task had a Big-O of: O(n) or Linear because we're iterating through each list element in order to extract numbers. But the sorting increases the time complexity.
+For sorting this has a Worst Case Big-O of: O(n log(n)) or Logarithmic
+This is considered Bad - score of 2 out of 5
