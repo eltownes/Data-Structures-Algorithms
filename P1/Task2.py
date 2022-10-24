@@ -21,15 +21,17 @@ Print a message:
 September 2016.".
 """
 
-# very first comparison is redundant but keeping it for overall simplicity
-# i.e. comparing record 0 to itself
-recordLongest = 0
-for idx, call in enumerate(calls):
-    if int(call[3]) >= int(calls[recordLongest][3]):
-        recordLongest = idx
+# count seconds for each number, calling and receiving
+dict_call_secs = {}
+for call in calls:
+    dict_call_secs[call[0]] = dict_call_secs.get(call[0], 0) + int(call[3])
+    dict_call_secs[call[1]] = dict_call_secs.get(call[1], 0) + int(call[3])
 
-# process recordLongest
-# gonna use `1` or the num that answered
-telNum = calls[recordLongest][1]
-timeSecs = calls[recordLongest][3]
-print(f"{telNum} spent the longest time, {timeSecs} seconds, on the phone during September 2016.")
+max_seconds = max(dict_call_secs.values())
+
+# find just the longest 'max_seconds' call
+for number, seconds in dict_call_secs.items():
+    if seconds == max_seconds:
+        print(f"{number} spent the longest time, {seconds} seconds, " +
+            "on the phone during September 2016.")
+        break
